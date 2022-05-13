@@ -1,0 +1,38 @@
+{% extends 'base.html.j2' %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+
+
+{% block content%}
+<div class="body">
+    <h1 class=glow_effect> Welcome to Movie World</h1>
+    <h5>"If at first you don't succeed, lower your standards."</h5>
+    <div class="loader">
+        <div class="face face1">
+            <div class="circle"></div>
+        </div>
+        <div class="face face2">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <div>
+        {# <img class="girl_image" src="{{url_for('static', filename='images/pokemon_girl.jpg')}}">
+        <img class="boy_image" src="{{url_for('static', filename='images/pokemon_male.jpg')}}"> #}
+        {# <h2> You have been chosen to battle the most elite trainers of the world.<h2/>
+        <p>Please proceed with caution and head to the training grounds.</p>
+        <p class="choice">Select five pokemon of your choice.</p>
+        <p class="last_body_text">There is no turning back now!! Proceed to the arena and await your fate.</p> #}
+    
+    </div>
+</div>
+    
+{% endblock %}

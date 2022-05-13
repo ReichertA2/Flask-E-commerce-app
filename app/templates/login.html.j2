@@ -1,0 +1,50 @@
+{% extends 'base.html.j2' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+{% endblock %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+
+
+{% block content %}
+<div class="body">
+  <h1 class=""> Login</h1>
+  <form action="{{url_for('auth.login')}}" method="POST">
+    <div class="textbox_button">
+    {{form.hidden_tag()}}
+      <div class="mb-2">
+        {{form.email.label(class="form-label")}}
+        {{form.email(class="form-control w-25")}}
+        {% for error in form.email.errors %}
+            <small style="color: red;">{{error}}</small>
+        {% endfor %}
+      </div>
+        <div>
+        {{form.password.label(class="form-label")}}
+        {{form.password(class="form-control w-25 mb-4")}}
+        {% for error in form.password.errors %}
+            <small style="color: red;">{{error}}</small>
+        {% endfor %}
+        </div>
+        <div>
+        {{form.submit(class="btn btn-dark form-control w-25 mb-3")}}
+        </div>
+      </div>
+</div>
+
+
+  {# <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" name="email" class="form-control" id="email">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button> #}
+</form>
+{% endblock %}
