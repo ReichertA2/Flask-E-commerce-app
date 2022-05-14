@@ -32,10 +32,22 @@ def item_view(id):
     
     return render_template('item.html.j2', movies=movies)
 
-@main.route('/cart', methods=['GET','POST'])
+@main.route('/cart_add/<int:id>', methods=['GET','POST'])
+@login_required
+def cart_add(id):
+    m = Item.query.filter_by(item_id=id).first()
+    current_user.add_item(m)
+
+    cart=Cart.query.all()
+    return render_template('cart.html.j2', cart=cart)
+
+@main.route('/cart', methods=['GET'])
 @login_required
 def cart():
-    return render_template('cart.html.j2')
+    cart=Cart.query.all()
+    
+
+    return render_template('cart.html.j2', cart=cart)
 
 # @main.route('/delete_items/<int:id>', methods=['GET','POST'])
 # # @login_required
@@ -77,3 +89,16 @@ def movie_download():
 
 
     return render_template('movies.html.j2')
+
+@main.route('/cart_remove/<int:id>', methods=['GET','POST'])
+@login_required
+def cart_remove(id):
+    # m = Cart.query.filter_by(id=id)
+    # print(m)
+    # print(current_user.item)
+    # current_user.remove_item(m)
+    m=Item.query.filter_by(id=2)
+    current_user.remove_item(m)
+
+    # cart=Cart.query.all()
+    return render_template('cart.html.j2' ,cart=cart)
