@@ -5,31 +5,44 @@
 {% endblock %}
 
 {% block title %}
-Movie Products
+Movies
 {% endblock %}
 
 
 {% block content %}
 <div class="body">
-<h1 class="">Movies</h1>
+<h1 class="glow_effect">Here is your Selection</h1>
 
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{url_for('static', filename = 'images/independance_day.jpg')}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Independence Day</h5>
-    <p class="card-text">In the epic adventure film Independence Day, strange phenomena surface around the globe. The skies ignite. Terror races through the world's major cities. As these extraordinary events unfold, it becomes increasingly clear that a force of incredible magnitude has arrived. Its mission: total annihilation over the Fourth of July weekend. The last hope to stop the destruction is an unlikely group of people united by fate and unimaginable circumstances.</p>
+
+  <div class="card h-100" style="width: 20rem; display: inline-block; width: 19%">
+    <div class="for_image">
+      <img src="{{movies.img}}"  class="card-img-top" alt="...">
+    </div>
+    <div class="card-body">
+      <h4 class="card-title text-center">{{movies.name}}</h4>
+
+    </div>
+    <table class="table table-borderless " style="text-align: right; width: 75%; margin:0px auto;" >
+        <tbody>
+        <tr>
+          <td scope="col">Desc</th>
+          <td>{{movies.desc}}</td>
+        </tr>
+        <tr>
+          <td scope="col">Price</th>
+          <td>{{movies.price}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <div class="card-body"> 
+      {# <a href="{{url_for('main.delete_pokemon', id=poke.poke_id)}}" class="card-link">More Info</a> #}
+     
+     </div>
+
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Price: </li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="{{url_for('main.cart')}}" class="card-link">Add to cart</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
 
 {% endblock %}
+

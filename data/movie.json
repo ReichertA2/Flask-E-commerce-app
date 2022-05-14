@@ -1,0 +1,92 @@
+{ 
+    "data": [ 
+        {
+        "Movies": [
+            {
+                "name": "Independence Day",
+                "desc":"In the epic adventure film Independence Day, strange phenomena surface around the globe. The skies ignite. Terror races through the world's major cities. As these extraordinary events unfold, it becomes increasingly clear that a force of incredible magnitude has arrived. Its mission: total annihilation over the Fourth of July weekend. The last hope to stop the destruction is an unlikely group of people united by fate and unimaginable circumstances.",
+                "price": 10.00,
+                "img": "images/independance_day.jpg"
+            },
+            {
+                "name": "Inception",
+                "desc":"Dom Cobb (Leonardo DiCaprio) is a thief with the rare ability to enter people's dreams and steal their secrets from their subconscious. His skill has made him a hot commodity in the world of corporate espionage but has also cost him everything he loves. Cobb gets a chance at redemption when he is offered a seemingly impossible task: Plant an idea in someone's mind. If he succeeds, it will be the perfect crime, but a dangerous enemy anticipates Cobb's every move.",
+                "price": 10.00,
+                "img": "images/inception.jpg"
+                
+            },
+            {
+                "name": "The Shining",
+                "desc":"Jack Torrance (Jack Nicholson) becomes winter caretaker at the isolated Overlook Hotel in Colorado, hoping to cure his writer's block. He settles in along with his wife, Wendy (Shelley Duvall), and his son, Danny (Danny Lloyd), who is plagued by psychic premonitions. As Jack's writing goes nowhere and Danny's visions become more disturbing, Jack discovers the hotel's dark secrets and begins to unravel into a homicidal maniac hell-bent on terrorizing his family.",
+                "price": 15.00,
+                "img": "images/shining.jpg"
+                
+            },
+            {
+                "name": "Without a Paddle",
+                "desc":"After their friend Billy (Anthony Starr) dies, Tom (Dax Shepard), Jerry (Matthew Lillard) and Dan (Seth Green) go on a camping trip to honor his memory. The campsite, however, has special significance. Billy believed famous airplane hijacker D.B. Cooper hid money in the area, and his friends aim to find it. Unfortunately, they are not prepared for the adventure. After falling over a waterfall, they are left to the mercy of wild animals and a harsh wilderness terrain.",
+                "price": 12.00,
+                "img": "images/without_a_paddle.jpg"
+                
+            },
+            {
+                "name": "Inception",
+                "desc":"Dom Cobb (Leonardo DiCaprio) is a thief with the rare ability to enter people's dreams and steal their secrets from their subconscious. His skill has made him a hot commodity in the world of corporate espionage but has also cost him everything he loves. Cobb gets a chance at redemption when he is offered a seemingly impossible task: Plant an idea in someone's mind. If he succeeds, it will be the perfect crime, but a dangerous enemy anticipates Cobb's every move.",
+                "price": 10.00,
+                "img": "images/inception.jpg"
+                
+            },
+            {
+                "name": "The Black Panther",
+                "desc":"After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king. When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a conflict that puts the fate of Wakanda and the entire world at risk. Faced with treachery and danger, the young king must rally his allies and release the full power of Black Panther to defeat his foes and secure the safety of his people.",
+                "price": 20.00,
+                "img": "images/black_panther.jpg"
+                
+            }
+            {
+                "name": "Halloween",
+                "desc":"On a cold Halloween night in 1963, six year old Michael Myers brutally murdered his 17-year-old sister, Judith. He was sentenced and locked away for 15 years. But on October 30, 1978, while being transferred for a court date, a 21-year-old Michael Myers steals a car and escapes Smith's Grove. He returns to his quiet hometown of Haddonfield, Illinois, where he looks for his next victims.",
+                "price": 20.00,
+                "img": "images/halloween.jpg"
+                
+            }
+            {
+                "name": "John Wicke",
+                "desc":"Legendary assassin John Wick (Keanu Reeves) retired from his violent career after marrying the love of his life. Her sudden death leaves John in deep mourning. When sadistic mobster Iosef Tarasov (Alfie Allen) and his thugs steal John's prized car and kill the puppy that was a last gift from his wife, John unleashes the remorseless killing machine within and seeks vengeance. Meanwhile, Iosef's father (Michael Nyqvist) -- John's former colleague -- puts a huge bounty on John's head.",
+                "price": 22.00,
+                "img": "images/john_wicke.jpg"
+                
+            }
+            {
+                "name": "Dune",
+                "desc":"Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence, only those who can conquer their own fear will survive.",
+                "price": 20.00,
+                "img": "images/dune.jpg"
+                
+            }
+
+        ]
+    },
+    {
+    "Category": [
+            {
+                
+                "name": "Horror"
+                
+            },
+            {
+                "name": "Comedy"
+            },
+            {
+                "name": "Action"
+            },
+            {
+                "name": "Sci-fi"
+            }
+            
+            
+
+        ]
+    }
+]
+}
