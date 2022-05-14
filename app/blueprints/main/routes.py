@@ -38,17 +38,50 @@ def cart_add(id):
     m = Item.query.filter_by(item_id=id).first()
     current_user.add_item(m)
 
-    cart=Cart.query.filter_by(user_id=current_user.id)
-    return render_template('cart.html.j2', cart=cart)
+    item_list = []
+    cart=Cart.query.filter_by(user_id=current_user.id).all()
+    # print("cart",cart)
+    items = Item.query.filter_by().all()
+    item_dict ={}
+    subtotal = 0
+    for item in cart:
+        id_for_item = item.item_id
+        item_list.append(id_for_item)
+        add_item = Item.query.filter_by(item_id=id_for_item).all()
+        item_dict[id_for_item] = add_item
+    # print(item_dict)
+
+    # cart=Cart.query.filter_by(user_id=current_user.id)
+    
+        for price in item_dict[id_for_item]:
+            # print(price["price"])
+            subtotal += price.price
+    
+    return render_template('cart.html.j2', cart=item_dict, subtotal=subtotal, item_list=item_list)
 
 @main.route('/cart', methods=['GET'])
 @login_required
 def cart():
-    
-    cart=Cart.query.filter_by(user_id=current_user.id)
-    
+    item_list = []
+    cart=Cart.query.filter_by(user_id=current_user.id).all()
+    # print("cart",cart)
+    items = Item.query.filter_by().all()
+    item_dict ={}
+    subtotal = 0
+    for item in cart:
+        id_for_item = item.item_id
+        item_list.append(id_for_item)
+        add_item = Item.query.filter_by(item_id=id_for_item).all()
+        item_dict[id_for_item] = add_item
+    # print(item_dict)
 
-    return render_template('cart.html.j2', cart=cart)
+    # cart=Cart.query.filter_by(user_id=current_user.id)
+    
+        for price in item_dict[id_for_item]:
+            # print(price["price"])
+            subtotal += price.price
+    
+    return render_template('cart.html.j2', cart=item_dict, subtotal=subtotal, item_list=item_list)
 
 # @main.route('/delete_items/<int:id>', methods=['GET','POST'])
 # # @login_required
@@ -98,7 +131,26 @@ def cart_remove(id):
     
     m=Item.query.filter_by(item_id=id).first()
     current_user.remove_item(m)
-    return render_template('cart.html.j2')
+    item_list = []
+    cart=Cart.query.filter_by(user_id=current_user.id).all()
+    # print("cart",cart)
+    items = Item.query.filter_by().all()
+    item_dict ={}
+    subtotal = 0
+    for item in cart:
+        id_for_item = item.item_id
+        item_list.append(id_for_item)
+        add_item = Item.query.filter_by(item_id=id_for_item).all()
+        item_dict[id_for_item] = add_item
+    # print(item_dict)
+
+    # cart=Cart.query.filter_by(user_id=current_user.id)
+    
+        for price in item_dict[id_for_item]:
+            # print(price["price"])
+            subtotal += price.price
+    
+    return render_template('cart.html.j2', cart=item_dict, subtotal=subtotal, item_list=item_list)
     # m=Cart.query.filter_by(id=id).first()
     # print(m)
     # m.remove_id(m.id)
@@ -114,11 +166,21 @@ def cart_remove(id):
     # return render_template('cart.html.j2')
     
     
-# @main.route('/cart_remove_all/<int:id>', methods=['GET','POST'])
-# @login_required
-# def cart_remove_all(id):
-
+@main.route('/cart_remove_all', methods=['GET','POST'])
+@login_required
+def cart_remove_all():
+    cart=Cart.query.filter_by(user_id=current_user.id).all()
+    # print("cart",cart)
     
-#     m=Item.query.filter_by(item_id=id).all()
-#     current_user.remove_item(m)
-#     return render_template('cart.html.j2')
+    item_dict ={}
+    item_list=[]
+    for item in cart:
+        id_for_item = item.item_id
+
+
+        remove_item = Item.query.filter_by(item_id=id_for_item).all()
+        current_user.remove_item(remove_item)
+
+    subtotal=0.0
+    
+    return render_template('cart.html.j2', cart=item_dict, subtotal=subtotal, item_list=item_list)
