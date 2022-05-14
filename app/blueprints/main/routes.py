@@ -38,13 +38,13 @@ def cart_add(id):
     m = Item.query.filter_by(item_id=id).first()
     current_user.add_item(m)
 
-    cart=Cart.query.all()
+    cart=Cart.query.filter_by(user_id=current_user.id)
     return render_template('cart.html.j2', cart=cart)
 
 @main.route('/cart', methods=['GET'])
 @login_required
 def cart():
-    cart=Cart.query.all()
+    cart=Cart.query.filter_by(user_id=current_user.id)
     
 
     return render_template('cart.html.j2', cart=cart)
@@ -97,8 +97,8 @@ def cart_remove(id):
     # print(m)
     # print(current_user.item)
     # current_user.remove_item(m)
-    m=Item.query.filter_by(id=2)
+    m=Item.query.filter_by(item_id=id).first()
     current_user.remove_item(m)
 
-    # cart=Cart.query.all()
+    cart=Cart.query.filter_by(user_id=current_user.id)
     return render_template('cart.html.j2' ,cart=cart)
