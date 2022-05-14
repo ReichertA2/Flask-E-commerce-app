@@ -100,5 +100,5 @@ def cart_remove(id):
     m=Item.query.filter_by(item_id=id).first()
     current_user.remove_item(m)
 
-    cart=Cart.query.filter_by(user_id=current_user.id)
-    return render_template('cart.html.j2' ,cart=cart)
+    # cart=Cart.query.filter_by(user_id=current_user.id)
+    return render_template('cart.html.j2')

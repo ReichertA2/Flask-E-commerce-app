@@ -28,7 +28,7 @@ Cart
 
               <h6 class="my-0">{{movie.id}}</h6>
               {# <small class="text-muted">{{movie.item.desc}}</small> #}
-              <a href="{{url_for('main.cart_remove', id=movie.id)}}"  class="card-link">Delete</a>
+              <a href="{{url_for('main.cart_remove', id=movie.item_id)}}"  class="card-link">Delete</a>
             </div>
             <span class="text-muted">${{movie.price}}</span>
           </li>
