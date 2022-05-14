@@ -9,6 +9,9 @@ class Cart(db.Model):
     item_id = db.Column(db.Integer, db.ForeignKey('item.item_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
+    def remove_id(self, id):
+        db.session.delete(id)
+        db.session.commit()
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)

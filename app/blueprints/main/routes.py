@@ -44,6 +44,7 @@ def cart_add(id):
 @main.route('/cart', methods=['GET'])
 @login_required
 def cart():
+    
     cart=Cart.query.filter_by(user_id=current_user.id)
     
 
@@ -93,12 +94,31 @@ def movie_download():
 @main.route('/cart_remove/<int:id>', methods=['GET','POST'])
 @login_required
 def cart_remove(id):
-    # m = Cart.query.filter_by(id=id)
-    # print(m)
-    # print(current_user.item)
-    # current_user.remove_item(m)
+  
+    
     m=Item.query.filter_by(item_id=id).first()
     current_user.remove_item(m)
-
-    # cart=Cart.query.filter_by(user_id=current_user.id)
     return render_template('cart.html.j2')
+    # m=Cart.query.filter_by(id=id).first()
+    # print(m)
+    # m.remove_id(m.id)
+    # print(m.id)
+    # return render_template('cart.html.j2')
+    
+
+    
+    # c=Item.query.filter_by(item_id=id).distinct().all()
+    # print(c)
+    # # if c > 1:
+    # current_user.remove_item(c)
+    # return render_template('cart.html.j2')
+    
+    
+# @main.route('/cart_remove_all/<int:id>', methods=['GET','POST'])
+# @login_required
+# def cart_remove_all(id):
+
+    
+#     m=Item.query.filter_by(item_id=id).all()
+#     current_user.remove_item(m)
+#     return render_template('cart.html.j2')
