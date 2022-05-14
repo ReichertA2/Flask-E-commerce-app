@@ -57,7 +57,9 @@ def cart_add(id):
             # print(price["price"])
             subtotal += price.price
     
-    return render_template('cart.html.j2', cart=item_dict, subtotal=subtotal, item_list=item_list)
+    quantity = len(item_list)
+    
+    return render_template('cart.html.j2', item_dict=item_dict, subtotal=subtotal, item_list=item_list, quantity=quantity)
 
 @main.route('/cart', methods=['GET'])
 @login_required
@@ -65,7 +67,7 @@ def cart():
     item_list = []
     cart=Cart.query.filter_by(user_id=current_user.id).all()
     # print("cart",cart)
-    items = Item.query.filter_by().all()
+    
     item_dict ={}
     subtotal = 0
     for item in cart:
@@ -81,7 +83,9 @@ def cart():
             # print(price["price"])
             subtotal += price.price
     
-    return render_template('cart.html.j2', cart=item_dict, subtotal=subtotal, item_list=item_list)
+    quantity = len(item_list)
+    
+    return render_template('cart.html.j2', item_dict=item_dict, subtotal=subtotal, item_list=item_list, quantity=quantity)
 
 # @main.route('/delete_items/<int:id>', methods=['GET','POST'])
 # # @login_required
@@ -150,7 +154,9 @@ def cart_remove(id):
             # print(price["price"])
             subtotal += price.price
     
-    return render_template('cart.html.j2', cart=item_dict, subtotal=subtotal, item_list=item_list)
+    quantity = len(item_list)
+    
+    return render_template('cart.html.j2', item_dict=item_dict, subtotal=subtotal, item_list=item_list, quantity=quantity)
     # m=Cart.query.filter_by(id=id).first()
     # print(m)
     # m.remove_id(m.id)
@@ -184,5 +190,6 @@ def cart_remove_all():
             current_user.remove_item(movie)
 
     subtotal=0.0
+    quantity = len(item_list)
     
-    return render_template('cart.html.j2', cart=item_dict, subtotal=subtotal, item_list=item_list)
+    return render_template('cart.html.j2', item_dict=item_dict, subtotal=subtotal, item_list=item_list, quantity=quantity)
