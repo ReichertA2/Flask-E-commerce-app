@@ -15,10 +15,10 @@ from flask_login import login_required, current_user
 def index():
     return render_template('index.html.j2')
 
-@main.route('/shop', methods=['GET','POST'])
+@main.route('/movies', methods=['GET','POST'])
 @login_required
-def shop():
-    return render_template('shop.html.j2')
+def movies():
+    return render_template('movies.html.j2')
 
 @main.route('/item', methods=['GET','POST'])
 @login_required

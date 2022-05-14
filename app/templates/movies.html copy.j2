@@ -1,0 +1,39 @@
+{% extends 'base.html.j2' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/pokemon_team.css')}}">
+{% endblock %}
+
+{% block title %}
+Movie Products
+{% endblock %}
+
+
+{% block content %}
+<div class="body">
+<h1 class="">Movie World</h1>
+
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{url_for('static', filename ='images/independance_day.jpg)}}" alt="Card-image-cap">
+  <div class="card-body">
+    <h5 class="card-title">Independence Day</h5>
+    <p class="card-text">In the epic adventure film Independence Day, strange phenomena surface around the globe.</p>
+  
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Price: </li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+  <div class="card-body">
+  {% if current_user.is_authenticated %}
+    <a href="{{url_for('main.item')}}"  class="card-link">Want to see More</a>
+    <a href="#" class="card-link">Another link</a>
+    {% endif %}
+
+  </div>
+</div>
+
+
+{% endblock %}
