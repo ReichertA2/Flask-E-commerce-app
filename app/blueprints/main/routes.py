@@ -179,7 +179,9 @@ def cart_remove_all():
 
 
         remove_item = Item.query.filter_by(item_id=id_for_item).all()
-        current_user.remove_item(remove_item)
+        for movie in remove_item:
+        # print(remove_item[j])
+            current_user.remove_item(movie)
 
     subtotal=0.0
     
