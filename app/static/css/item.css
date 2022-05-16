@@ -1,0 +1,10 @@
+body{
+    
+    background-image: radial-gradient(circle, rgb(3, 22, 39) 0%, rgb(4, 29, 53) 30%, rgb(4, 25, 57) 70%);
+   
+    height: 100vh;
+    color: white;
+    max-height: 300px;
+    
+
+}

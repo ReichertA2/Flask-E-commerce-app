@@ -1,9 +1,9 @@
-from flask import redirect, render_template, request, flash, url_for
+from flask import render_template
 import requests
 from .import bp as main
-# from ...forms import PokemonForm
+
 from app.models import Item, Cart
-# import random
+
 import random
 
 from flask_login import login_required, current_user

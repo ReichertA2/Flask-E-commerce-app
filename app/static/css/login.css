@@ -1,0 +1,41 @@
+.container{
+    margin: 0px;
+}
+
+.body{
+    /* color: white; */
+    margin: 0px;
+    padding: 20px;
+    margin-right: 0px;
+    margin-left: 10px;
+    font-family: cursive;
+  
+    
+    min-height: 600px;
+    width: 115%;
+    /* background: red; */
+    background-image:url("../images/open_curtain.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /* width: 3000px; */
+}
+
+h1{
+    color: white;
+}
+
+.textbox_button{ 
+    text-align: center;
+} 
+
+.form-control.w-25{
+    margin:0px auto;
+}
+
+.form-label{
+    color: white;
+}
+
+
+

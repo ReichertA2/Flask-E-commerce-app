@@ -1,7 +1,7 @@
 {% extends 'base.html.j2'%}
 
 {% block css %}
-    <link rel="stylesheet" href="{{url_for('static', filename='css/pokemon_team.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/movies.css')}}">
 {% endblock %}
 
 {% block title %}
@@ -15,7 +15,7 @@ Movies
 
 {% for movie in movies %}
 
-  <div class="card h-100" style="width: 20rem; display: inline-block; width: 19%">
+  <div class="card" style="width: 20rem; display: inline-block; width: 19%">
     <div class="for_image">
       <img src="{{movie.img}}"  class="card-img-top" alt="...">
     </div>

@@ -24,19 +24,10 @@
     {% endif %}
 </h1>
 
-<form action="{{url_for('auth.edit_profile') if current_user.is_authenticated else url_for('auth.register')}}" method="POST">
+<form action="{{url_for('auth.register')}}" method="POST">
     <div class="textbox_button">
     {{form.hidden_tag()}}
 
-        {# <div>
-        {{form.icon.label(class="form-label")}}
-        </div> #}
-        {# <div>
-            {% for subfield in form.icon %}
-                {{subfield}}
-                {{subfield.label | safe}}
-            {% endfor %}
-        </div> #}
         <div class="mb-2">
         {{form.first_name.label(class="form-label")}}
         {{form.first_name(class="form-control w-25", value=current_user.first_name)}}
@@ -77,15 +68,6 @@
         {{form.submit(class="btn btn-dark form-control w-25 mb-3")}}
         </div>
     </div>
-        {# <div class="loader1">
-            <div class="face1 face2">
-                <div class="circle1"></div>
-            </div>
-            <div class="face1 face3">
-                <div class="circle1"></div>
-            </div>
-        </div>
-     #}
         
 </div>  
 </form>
