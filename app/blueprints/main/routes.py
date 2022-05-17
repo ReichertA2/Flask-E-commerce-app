@@ -133,11 +133,13 @@ def movie_download():
 def cart_remove(id):
   
     
-    m=Item.query.filter_by(item_id=id).first()
-    current_user.remove_item(m)
+    # m=Item.query.filter_by(item_id=id).first()
+    # current_user.remove_item(m)
     item_list = []
-    cart=Cart.query.filter_by(user_id=current_user.id).all()
+    cart_item=Cart.query.filter_by(user_id=current_user.id).filter_by(item_id=id).first()
     # print("cart",cart)
+    cart_item.remove()
+    cart=Cart.query.filter_by(user_id=current_user.id).all()
     items = Item.query.filter_by().all()
     item_dict ={}
     subtotal = 0
@@ -181,13 +183,14 @@ def cart_remove_all():
     item_dict ={}
     item_list=[]
     for item in cart:
-        id_for_item = item.item_id
+        item.remove()
+        # id_for_item = item.item_id
 
 
-        remove_item = Item.query.filter_by(item_id=id_for_item).all()
-        for movie in remove_item:
-        # print(remove_item[j])
-            current_user.remove_item(movie)
+        # remove_item = Item.query.filter_by(item_id=id_for_item).all()
+        # for movie in remove_item:
+        # # print(remove_item[j])
+        #     current_user.remove_item(movie)
 
     subtotal=0.0
     quantity = len(item_list)
